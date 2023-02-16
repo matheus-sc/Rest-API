@@ -6,7 +6,12 @@ router.get('/ninjas', (req, res) => {
 })
 
 router.post('/ninjas', (req, res) => {
-    res.send({type: 'POST'});
+    console.log(req.body);
+    res.send({
+        type: 'POST',
+        name: req.body.name,
+        rank: req.body.rank
+    });
 })
 
 router.put('/ninjas/:id', (req, res) => {
