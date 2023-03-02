@@ -7,6 +7,7 @@ mongoose.set('strictQuery', true);
 mongoose.connect('mongodb://127.0.0.1/ninjago');
 mongoose.Promise = global.Promise;
 
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use('/api', require('./routes/api.js'));
 app.use(function(err, req, res, next) {
