@@ -4,7 +4,8 @@
   "description": "Repository made with the purpose to keep my studies about API rest",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/index.jsx --out-file public/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +19,28 @@
   },
   "homepage": "https://github.com/matheus-sc/Rest-API#readme",
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.21.0",
+    "@babel/polyfill": "^7.12.1",
+    "babel-standalone": "^6.26.0",
     "body-parser": "^1.20.1",
     "express": "^4.18.2",
-    "moongose": "^1.0.0"
+    "mongoose": "^7.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.21.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "babel-preset-env": "^1.7.0",
+    "core-js": "^3.29.0",
+    "cors": "^2.8.5",
+    "css-loader": "^6.7.3",
+    "nodemon": "^2.0.21",
+    "style-loader": "^3.3.1",
+    "webpack-cli": "^5.0.1"
   }
 }
