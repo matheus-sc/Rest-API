@@ -15,9 +15,7 @@ function Ninjas() {
         return data.json()
       })
       .then(json => {
-        this.setNinjas({
-          ninjas: json
-        });
+        setNinjas(json);
       })
       .catch((error) => {
         console.log(error);

@@ -15,10 +15,11 @@ app.use((req, res, next) => {
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use('/api', apiRoutes);
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   res.status(422).send({ error: err._message });
+  next()
 });
 
-app.listen(process.env.port || 4000, () => {
+app.listen(4000, () => {
   console.log('Now listening for requests');
 });

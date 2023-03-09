@@ -16,30 +16,30 @@ router.get('/ninjas', (req, res, next) => {
           },
         },
       ])
-        .then(function (ninjas) {
+        .then((ninjas) => {
           res.send(ninjas);
         })
         .catch(next);
 });
 
 router.post('/ninjas', (req, res, next) => {
-    Ninja.create(req.body).then(function(ninja){
+    Ninja.create(req.body).then((ninja) => {
         res.send(ninja);
     }).catch(next);
 });
 
 router.put('/ninjas/:id', (req, res, next) => {
-    Ninja.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
-        Ninja.findOne({_id: req.params.id}).then(function(ninja){
+    Ninja.findByIdAndUpdate({_id: req.params.id}, req.body).then(() => {
+        Ninja.findOne({_id: req.params.id}).then((ninja) => {
             res.send(ninja);
         });
-    });
+    }).catch(next);
 });
 
 router.delete('/ninjas/:id', (req, res, next) => {
-    Ninja.findByIdAndDelete({_id: req.params.id}).then(function(ninja){
+    Ninja.findByIdAndDelete({_id: req.params.id}).then((ninja) => {
         res.send(ninja);
-    });
+    }).catch(next);
 });
 
 module.exports = router;
